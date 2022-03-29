@@ -18,42 +18,47 @@ class Main{
       List<Game> c = new ArrayList<Game>();
       Scanner s = new Scanner(System.in);
       Scanner s1 = new Scanner(System.in);
+      Game g;
+
+      g = new Game(1, "The Last of Us part II", "PS4, PS5", 360000);
+      c.add(g);
+
       int pil;
       do{
-         System.out.println("+==========================+");
-         System.out.println("|-----Sistem Data Game-----|");
-         System.out.println("+==========================+");
-         System.out.println("| [1] Lihat Data Game      |");
-         System.out.println("| [2] Tambah Data Game     |");
-         System.out.println("| [3] Cari Data Game       |");
-         System.out.println("| [4] Hapus Data Game      |");
-         System.out.println("| [5] Perbarui Data Game   |");
-         System.out.println("| [0] Keluar               |");
-         System.out.println("+==========================+");
+         System.out.println("+====================================+");
+         System.out.println("|----------Sistem Data Game----------|");
+         System.out.println("+====================================+");
+         System.out.println("| [1] Lihat Data Game                |");
+         System.out.println("| [2] Tambah Data Game               |");
+         System.out.println("| [3] Cari Data Game                 |");
+         System.out.println("| [4] Hapus Data Game                |");
+         System.out.println("| [5] Perbarui Data Game             |");
+         System.out.println("| [0] Keluar                         |");
+         System.out.println("+====================================+");
          System.out.print("Pilih [1-5] : ");
          pil = s.nextInt();
          System.out.print("\n");
 
          switch(pil){
             case 1:
-               System.out.println("+==========================+");
-               System.out.println("|---------Data Game--------|");
-               System.out.println("+==========================+");
+               System.out.println("+====================================+");
+               System.out.println("|--------------Data Game-------------|");
+               System.out.println("+====================================+");
                Iterator<Game> i = c.iterator();
                
 //               c = Game.();
                for (Game game : c) {
                    System.out.println(" ");
-                   System.out.println("\tID       : " + game.getID());
-                   System.out.println("\tJudul    : " + game.getJudul());
-                   System.out.println("\tPlatform : " + game.getPlatform());
-                   System.out.println("\tHarga    : " + game.getHarga());
+                   System.out.println("   ID       : " + game.getID());
+                   System.out.println("   Judul    : " + game.getJudul());
+                   System.out.println("   Platform : " + game.getPlatform());
+                   System.out.println("   Harga    : " + game.getHarga());
                }
 //               while(i.hasNext()){
 //                  Game e = i.next(); 
 //                  System.out.println(e);
 //               }
-               System.out.println("+==========================+\n");
+               System.out.println("+====================================+\n");
             break;
             
             case 2:
@@ -76,7 +81,7 @@ class Main{
                boolean found = false;
                System.out.print("Masukkan ID yang ingin di cari :");
                int ID = s.nextInt();
-               System.out.println("+--------------------------+");
+               System.out.println("+====================================+");
                i = c.iterator();
                while(i.hasNext()){
                   Game e = i.next();
@@ -89,14 +94,14 @@ class Main{
                if(!found){
                   System.out.println("Data tidak ditemukan\n");
                }
-               System.out.println("+--------------------------+\n");
+               System.out.println("+====================================+\n");
             break;
 
             case 4:
                found = false;
                System.out.print("Masukkan ID data yang ingin dihapus :");
                ID = s.nextInt();
-               System.out.println("+--------------------------+");
+               System.out.println("+====================================+");
                i = c.iterator();
                while(i.hasNext()){
                   Game e = i.next();
@@ -112,7 +117,7 @@ class Main{
                   System.out.println("\tData berhasil dihapus...!\n");
                }
 
-               System.out.println("+--------------------------+\n");
+               System.out.println("+====================================+\n");
             break;
             
             case 5:
